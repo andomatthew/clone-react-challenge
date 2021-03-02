@@ -14,7 +14,7 @@ export default function NestedList(props) {
 
   //alert ini hanya sementara
   const matchUpButton =() => {
-    alert('the button you clicked will go to match up page later')
+    alert(JSON.stringify(props.hero.id))
   }
 
   const handleClick = () => {
@@ -35,7 +35,7 @@ export default function NestedList(props) {
         <List component="div" disablePadding>
           <ListItem style={{display: "flex", flexDirection: "column", alignItems: "flex-start"}}>
             <ListItemText>
-              <Typography variant="h6">Primary attribute: {props.hero.primary_attr}</Typography>
+              <Typography variant="h6">Primary Attribute: {props.hero.primary_attr}</Typography>
             </ListItemText>
             <ListItemText>
               <Typography variant="h6">Attack Type: {props.hero.attack_type}</Typography>

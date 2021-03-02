@@ -1,11 +1,16 @@
+import './App.css'
 import HomePage from './components/HomePage'
-import MatchUpPage from './components/MatchUpPage'
+import Navigation from './components/AppBar'
+
+import Container from '@material-ui/core/Container'
 
 function App() {
   return (
-    <div>
-      <HomePage/>
-      <MatchUpPage/>
+    <div className="background">
+      <Container>
+        <Navigation/>
+        <HomePage/>
+      </Container>
     </div>
   );
 }
