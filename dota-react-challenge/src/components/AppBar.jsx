@@ -17,7 +17,7 @@ export default function Navigation() {
           <IconButton>
             <MenuIcon />
           </IconButton>
-          <Typography>Hero List</Typography>
+          <Typography><h3>List of Heroes</h3></Typography>
         </Toolbar>
       </AppBar>
     </React.Fragment>
