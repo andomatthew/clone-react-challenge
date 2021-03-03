@@ -1,15 +1,25 @@
 import './App.css'
-import HomePage from './components/HomePage'
-import Navigation from './components/AppBar'
+import AppBar from './components/AppBar'
+import HomePage from './pages/HomePage'
+import MatchUpPage from './pages/MatchUpPage'
+import { Switch, Route } from 'react-router-dom'
 
 import Container from '@material-ui/core/Container'
 
 function App() {
+  
   return (
     <div className="background">
       <Container>
-        <Navigation/>
-        <HomePage/>
+        <AppBar/>
+        <Switch>
+          <Route path='/detail/:id'>
+            <MatchUpPage/>
+          </Route>
+          <Route path='/'>
+            <HomePage/>
+          </Route>
+        </Switch>
       </Container>
     </div>
   );
