@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 //components
 
 import HeroDetail from '../components/HeroDetail'
-import UseFetch from '../hooks/UseFetch'
+import useFetch from '../hooks/useFetch'
 
 const useStyles = makeStyles({
   root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 export default function Heroes () {
   const classes = useStyles()
-  const [heroes, error] = UseFetch('https://api.opendota.com/api/heroes')
+  const [heroes, error] = useFetch('https://api.opendota.com/api/heroes')
 
   return (
       <Paper className={classes.position}>
