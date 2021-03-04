@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
 
-export default function HeroesList(api) {
+export default function useFetch() {
   //2
   const [data, setHeroes] = useState([])
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
   //3
   useEffect(() => {
-    fetch(api)
+    setLoading(true)
+    fetch('https://api.opendota.com/api/heroes')
     .then(response => {
       if(!response.ok) {
-        console.log(response, 'ini response')
         setError('Error Not Found')
       }
       else {
@@ -20,10 +21,13 @@ export default function HeroesList(api) {
       setHeroes(data)
     })
     .catch(error => {
-      console.log(error, 'ini error')
       setError(error)
     })
-  }, [api])
+    .finally(_ => {
+      console.log('masuk finally')
+      setLoading(false)
+    })
+  }, [])
 
-  return [data, error]
+  return [data, error, loading]
 }

@@ -11,6 +11,10 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import { useHistory } from 'react-router-dom'
 
+import { useDispatch } from 'react-redux'
+import { addToFavorite } from '../store/actions'
+// import store from '../store/store'
+
 
 const useStyles = makeStyles({
   root: {
@@ -22,15 +26,22 @@ const useStyles = makeStyles({
 
 export default function NestedList(props) {
   
+  const dispatch = useDispatch()
   const history = useHistory()
   
   const classes = useStyles()
 
+
   const [open, setOpen] = React.useState(false)
 
-  //alert ini hanya sementara
+
   const matchUpButton =() => {
     history.push(`/detail/${props.hero.id}`)
+  }
+
+  
+  const handleAddToFavorite = () => {
+    dispatch(addToFavorite(props.hero.localized_name))
   }
 
   const handleClick = () => {
@@ -64,6 +75,7 @@ export default function NestedList(props) {
               <Typography variant="h6">Legs: {props.hero.legs}</Typography>
             </ListItemText>
               <Button color="primary" onClick={matchUpButton}>Match Up</Button>
+              <Button color="primary" onClick={handleAddToFavorite}>Add to My Favorite</Button>
           </ListItem>
         </List>
       </Collapse>
