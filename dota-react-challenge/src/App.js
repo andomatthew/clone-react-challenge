@@ -6,7 +6,7 @@ import FavoritePage from './pages/FavoritePage'
 import { Switch, Route } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
-import store from './store/store'
+import store from './store/reducers/index'
 
 import Container from '@material-ui/core/Container'
 
