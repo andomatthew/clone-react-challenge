@@ -6,9 +6,11 @@ import SearchIcon from '@material-ui/icons/Search'
 import { makeStyles } from '@material-ui/core/styles'
 import InputBase from '@material-ui/core/InputBase'
 import Button from '@material-ui/core/Button'
+import { useHistory } from 'react-router-dom'
 
 //react-router
 import { Link } from 'react-router-dom'
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -20,8 +22,13 @@ const useStyles = makeStyles({
   }
 })
 
+
 export default function Navigation() {
   const classes = useStyles()
+  const history = useHistory()
+  const goToFavorite = () => {
+    history.push(`/favorite`)
+  }
   return(
     <React.Fragment>
       <AppBar
@@ -30,9 +37,10 @@ export default function Navigation() {
         <Toolbar style={{display: 'flex', justifyContent: 'space-evenly'}}>
           <Link to="/">
             <Button>
-              <h3 button>Home</h3>
+              <Typography variant="h6">Home</Typography>
             </Button>
           </Link>
+          <Button color="primary" onClick={goToFavorite}>My Favorites</Button>
           <div className={classes.search}>
             <SearchIcon/>
             <InputBase placeholder="Search..."></InputBase>
