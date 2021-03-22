@@ -2,18 +2,23 @@ import React from 'react';
 //material-ui
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import Typography from '@material-ui/core/Typography'
+import SearchIcon from '@material-ui/icons/Search'
 import { makeStyles } from '@material-ui/core/styles'
+import InputBase from '@material-ui/core/InputBase'
+import Button from '@material-ui/core/Button'
+
+//react-router
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
+  },
+  search: {
+    display: 'flex',
+    alignItems: 'center'
   }
 })
-
-
 
 export default function Navigation() {
   const classes = useStyles()
@@ -22,11 +27,16 @@ export default function Navigation() {
       <AppBar
         className={classes.root}
       >
-        <Toolbar>
-          <IconButton>
-            <MenuIcon />
-          </IconButton>
-          <Typography><h3>List of Heroes</h3></Typography>
+        <Toolbar style={{display: 'flex', justifyContent: 'space-evenly'}}>
+          <Link to="/">
+            <Button>
+              <h3 button>Home</h3>
+            </Button>
+          </Link>
+          <div className={classes.search}>
+            <SearchIcon/>
+            <InputBase placeholder="Search..."></InputBase>
+          </div>
         </Toolbar>
       </AppBar>
     </React.Fragment>
