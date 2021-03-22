@@ -24,7 +24,6 @@ export default function useFetch() {
       setError(error)
     })
     .finally(_ => {
-      console.log('masuk finally')
       setLoading(false)
     })
   }, [])

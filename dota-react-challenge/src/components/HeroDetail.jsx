@@ -12,8 +12,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
-import { addToFavorite } from '../store/actions'
-// import store from '../store/store'
+import { addToFavorite } from '../store/reducers/actions'
 
 
 const useStyles = makeStyles({

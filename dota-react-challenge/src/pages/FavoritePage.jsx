@@ -21,8 +21,7 @@ const useStyles = makeStyles({
 
 export default function FavoritePage() {
   
-  const favorite = useSelector(state => state.favorite)
-  const heroes = useSelector(state => state.heroes)
+  const favorite = useSelector(state => state.favorite.favorite)
   const classes = useStyles()
 
   console.log(favorite, 'ini favorite dari favorite page')

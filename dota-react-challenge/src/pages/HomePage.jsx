@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 
 //material-ui
 import List from '@material-ui/core/List'
@@ -8,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles'
 //components
 
 import HeroDetail from '../components/HeroDetail'
-import useFetch from '../hooks/useFetch'
+import useFetch  from '../hooks/useFetch'
 
 
 const useStyles = makeStyles({
@@ -22,9 +23,11 @@ const useStyles = makeStyles({
 })
 
 export default function Heroes () {
-
+  
+  const [heroes, error, loading] = useFetch()
   const classes = useStyles()
-  const [heroes, loading, error] = useFetch()
+
+ 
   return (
       <Paper className={classes.position}>
         
