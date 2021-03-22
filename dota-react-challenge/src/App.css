@@ -1,0 +1,12 @@
+html {
+  background-color: black;
+}
+
+.background {
+  background-size: contain;
+  background-color: black;
+  background-image: linear-gradient(
+    to bottom, transparent, black
+    ), url('https://i.pinimg.com/originals/00/93/9d/00939dff0059e823658afe98bb6d87a4.jpg');
+  background-repeat: no-repeat;
+}
